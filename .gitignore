@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# 环境与密钥
+.env
+*.key
+
+# 运行时数据（索引/追踪/记忆，可通过脚本重建）
+data/chroma/
+data/*.pkl
+data/*.sqlite3
+data/memory/
+!data/seed/
+!data/eval/
+
+# IDE
+.idea/
+.vscode/
+*.iml

@@ -1,0 +1,4 @@
+# 评测（可选，RAGAS 依赖较重，安装失败不影响主流程）
+ragas>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0

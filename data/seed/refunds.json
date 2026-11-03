@@ -1,0 +1,12 @@
+[
+  {"refund_id": "RF-001", "order_id": "ORD-2024-1010", "customer_id": "C003", "product_id": "P006", "reason": "尺码不合适", "amount": 259.0, "status": "completed", "created_at": "2024-07-16"},
+  {"refund_id": "RF-002", "order_id": "ORD-2024-1009", "customer_id": "C002", "product_id": "P003", "reason": "机器噪音过大", "amount": 2699.0, "status": "approved", "created_at": "2024-07-13"},
+  {"refund_id": "RF-003", "order_id": "ORD-2024-1012", "customer_id": "C007", "product_id": "P012", "reason": "睡感不适，7天无理由退货", "amount": 299.0, "status": "applied", "created_at": "2024-08-27"},
+  {"refund_id": "RF-004", "order_id": "ORD-2024-1003", "customer_id": "C002", "product_id": "P004", "reason": "安装时发现外观划痕", "amount": 2999.0, "status": "rejected", "created_at": "2024-03-10"},
+  {"refund_id": "RF-005", "order_id": "ORD-2024-1004", "customer_id": "C003", "product_id": "P005", "reason": "颜色与图片不符", "amount": 799.0, "status": "completed", "created_at": "2024-03-15"},
+  {"refund_id": "RF-006", "order_id": "ORD-2024-1006", "customer_id": "C006", "product_id": "P012", "reason": "高度调节损坏，质量问题", "amount": 299.0, "status": "approved", "created_at": "2024-05-12"},
+  {"refund_id": "RF-007", "order_id": "ORD-2024-1005", "customer_id": "C004", "product_id": "P008", "reason": "包装破损，米受潮", "amount": 89.0, "status": "completed", "created_at": "2024-04-22"},
+  {"refund_id": "RF-008", "order_id": "ORD-2024-1002", "customer_id": "C001", "product_id": "P009", "reason": "降噪效果低于预期", "amount": 899.0, "status": "rejected", "created_at": "2024-02-20"},
+  {"refund_id": "RF-009", "order_id": "ORD-2024-1007", "customer_id": "C005", "product_id": "P011", "reason": "使用后皮肤过敏", "amount": 199.0, "status": "approved", "created_at": "2024-06-05"},
+  {"refund_id": "RF-010", "order_id": "ORD-2024-1006", "customer_id": "C006", "product_id": "P001", "reason": "手机信号不稳定", "amount": 3299.0, "status": "applied", "created_at": "2024-05-18"}
+]

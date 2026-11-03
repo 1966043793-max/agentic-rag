@@ -1,0 +1,18 @@
+[
+  {"query": "网购商品几天内可以无理由退货？", "relevant_docs": ["crpl-25"]},
+  {"query": "商品有质量问题可以退货吗？", "relevant_docs": ["crpl-24"]},
+  {"query": "经营者欺诈消费者要赔偿几倍？", "relevant_docs": ["crpl-55"]},
+  {"query": "消费者有权知道商品的真实情况吗？", "relevant_docs": ["crpl-08"]},
+  {"query": "消费者个人信息被商家泄露了怎么办？", "relevant_docs": ["crpl-29"]},
+  {"query": "消费者和商家发生争议可以通过哪些途径解决？", "relevant_docs": ["crpl-39"]},
+  {"query": "格式条款对消费者不公平有效吗？", "relevant_docs": ["crpl-26"]},
+  {"query": "消费者的人身财产安全受威胁怎么办？", "relevant_docs": ["crpl-07"]},
+  {"query": "电商平台能删除消费者的评价吗？", "relevant_docs": ["ecl-39"]},
+  {"query": "电商平台对入驻商家有哪些审核义务？", "relevant_docs": ["ecl-27"]},
+  {"query": "电子支付出错造成损失谁赔偿？", "relevant_docs": ["ecl-54"]},
+  {"query": "电商平台搭售商品有什么规定？", "relevant_docs": ["ecl-19"]},
+  {"query": "跨境电商有什么特别规定？", "relevant_docs": ["ecl-71"]},
+  {"query": "电商平台要保存交易记录多久？", "relevant_docs": ["ecl-31"]},
+  {"query": "什么是电子商务平台经营者？", "relevant_docs": ["ecl-09"]},
+  {"query": "消费者在平台买东西被侵权，平台要担责吗？", "relevant_docs": ["ecl-38"]}
+]

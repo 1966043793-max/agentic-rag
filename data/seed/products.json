@@ -1,0 +1,14 @@
+[
+  {"product_id": "P001", "name": "星耀 X100 5G 手机", "category": "手机", "brand": "星耀", "price": 3299.0, "stock": 120, "specs": {"内存": "12GB", "存储": "256GB", "颜色": "曜石黑"}},
+  {"product_id": "P002", "name": "星耀 X100 Pro 5G 手机", "category": "手机", "brand": "星耀", "price": 4599.0, "stock": 45, "specs": {"内存": "16GB", "存储": "512GB", "颜色": "晨曦金"}},
+  {"product_id": "P003", "name": "云鲸智能洗地机 S2", "category": "家电", "brand": "云鲸", "price": 2699.0, "stock": 78, "specs": {"功率": "200W", "续航": "45分钟"}},
+  {"product_id": "P004", "name": "格力变频空调 1.5 匹", "category": "家电", "brand": "格力", "price": 2999.0, "stock": 30, "specs": {"能效": "一级", "制冷量": "3500W"}},
+  {"product_id": "P005", "name": "轻羽羽绒服 90绒", "category": "服饰", "brand": "轻羽", "price": 799.0, "stock": 200, "specs": {"填充": "90%白鸭绒", "尺码": "S-3XL"}},
+  {"product_id": "P006", "name": "极简直筒牛仔裤", "category": "服饰", "brand": "极简", "price": 259.0, "stock": 350, "specs": {"材质": "棉95%", "版型": "直筒"}},
+  {"product_id": "P007", "name": "云南古树普洱茶饼 357g", "category": "食品", "brand": "勐海", "price": 388.0, "stock": 500, "specs": {"年份": "2023", "产地": "云南勐海"}},
+  {"product_id": "P008", "name": "东北五常大米 5kg", "category": "食品", "brand": "稻花香", "price": 89.0, "stock": 800, "specs": {"产地": "黑龙江五常", "规格": "5kg"}},
+  {"product_id": "P009", "name": "静界降噪蓝牙耳机 Pro", "category": "数码", "brand": "静界", "price": 899.0, "stock": 150, "specs": {"降噪": "-48dB", "续航": "30小时"}},
+  {"product_id": "P010", "name": "青轴机械键盘 87键", "category": "数码", "brand": "键行者", "price": 399.0, "stock": 90, "specs": {"轴体": "青轴", "连接": "三模"}},
+  {"product_id": "P011", "name": "玻尿酸保湿精华液 30ml", "category": "美妆", "brand": "水光肌", "price": 199.0, "stock": 300, "specs": {"规格": "30ml", "功效": "保湿"}},
+  {"product_id": "P012", "name": "记忆棉护颈枕", "category": "家居", "brand": "眠立方", "price": 299.0, "stock": 180, "specs": {"材质": "记忆棉", "高度": "可调"}}
+]
