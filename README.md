@@ -3,8 +3,7 @@
 一个覆盖 **RAG、Router、Planner、Tool Calling、Memory、MCP、可观测性、评测** 八大能力的
 端到端 Agentic RAG 项目，业务场景为「电商智能客服 / 运营分析」。
 
-> 功能蓝图参考了腾讯开源的 [WeKnora](https://github.com/Tencent/WeKnora)（Go 实现），
-> 本项目是**全新的 Python 实现**，用更主流的 RAG/Agent 技术栈重新落地，便于学习和讲解。
+> 功能蓝图参考腾讯开源的 [WeKnora](https://github.com/Tencent/WeKnora)，基于主流 RAG/Agent 技术栈独立实现。
 
 ## 一、能力总览
 
@@ -41,14 +40,14 @@ finalize（保存长期记忆）──► 答案 + 可观测 trace
 ```
 
 Agent 用 LangGraph 组装，工具循环走原生 OpenAI function-calling，不依赖 LangChain 的
-Agent 封装——底层细节透明，便于理解与讲解。
+Agent 封装——底层细节透明。
 
 ## 三、目录结构
 
 ```
 agentic-rag/
 ├── data/
-│   ├── seed/           # 电商种子数据（商品/订单/客户/退款/政策文档）
+│   ├── seed/           # 数据：152 条法律条文 + 2.8 万天猫订单 + 商品/客户/退款
 │   └── eval/           # 评测数据集（检索 + QA）
 ├── src/agentic_rag/
 │   ├── config.py       # 配置（pydantic-settings，读 .env）
@@ -87,7 +86,7 @@ agentic-rag chat "退货政策是什么"   # 单次
 
 ### 配置说明（重要）
 
-**DeepSeek 不提供 embedding 接口**，所以 LLM 与 Embedding 需要分开配（这也是面试可聊点）：
+**DeepSeek 不提供 embedding 接口**，所以 LLM 与 Embedding 需要分开配：
 
 | 用途 | 示例 | 说明 |
 |------|------|------|
@@ -101,7 +100,7 @@ agentic-rag chat "退货政策是什么"   # 单次
 
 ```bash
 # 检索：直接看混合检索 + 重排效果
-agentic-rag search "钻石会员有什么权益"
+agentic-rag search "网购商品几天内可以无理由退货"
 
 # 评测：检索指标（无需 LLM）
 agentic-rag eval
@@ -132,9 +131,8 @@ Agent 会在回答物流/库存问题时通过 MCP 调用它。
 
 ## 六、电商业务逻辑
 
-- **结构化数据**（商品 / 订单 / 客户 / 退款）→ Agent 走 **工具调用** 查询，含聚合分析
-  （各商品退款率排名、品类销售额）。
-- **非结构化文档**（退货 / 售后 / 配送 / 会员政策）→ Agent 走 **RAG 检索** 回答。
+- **结构化数据**（2.8 万条真实天猫订单 + 商品 / 客户 / 退款）→ Agent 走 **工具调用** 查询。
+- **非结构化文档**（《消费者权益保护法》《电子商务法》152 条条文）→ Agent 走 **RAG 检索** 回答。
 - **Router** 把两类问题自动分流，**Planner** 处理「哪些商品退款率最高、原因是什么」这类
   需要多步查询 + 检索 + 分析的综合问题。
 
@@ -142,9 +140,9 @@ Agent 会在回答物流/库存问题时通过 MCP 调用它。
 
 | 问题 | 路由 |
 |------|------|
-| 退货政策里运费谁承担？ | rag |
+| 网购商品几天内可以无理由退货？ | rag |
+| 电商平台能删除消费者评价吗？ | rag |
 | 查一下 C001 的订单 | data |
-| 哪个商品退款率最高？主要原因是什么？ | analytics |
 | 你好 | chitchat |
 
 ## 七、技术栈
@@ -153,7 +151,7 @@ Agent 会在回答物流/库存问题时通过 MCP 调用它。
 `mcp`（客户端/服务端）· `fastapi` + `sse-starlette`（API）· `ragas`（评测）·
 `pydantic` + `pydantic-settings`（配置/模型）
 
-## 八、面试可聊的深度点
+## 八、设计要点
 
 1. **为什么 LLM 和 Embedding 要分开配**：DeepSeek 等模型只有 chat 接口，无 embedding。
 2. **混合检索怎么融合**：向量 + BM25 分数归一化加权，`alpha` 控制权重；也可换 RRF。
@@ -163,3 +161,15 @@ Agent 会在回答物流/库存问题时通过 MCP 调用它。
 6. **何时停止工具循环**：`max_iterations` 兜底 + 模型自行判断。
 7. **长期记忆的抽取与更新**：LLM 从对话抽取画像，规则约束「只记稳定信息」。
 8. **可观测性**：Span 树记录每一步的耗时/Token，可换 Langfuse。
+
+## 九、评测结果
+
+自建 16 条评测集（152 条条文粒度）：
+
+| 指标 | 纯混合检索 | 加 LLM 重排 |
+|------|-----------|------------|
+| Hit@3 | 87.5% | 100% |
+| MRR@3 | 0.84 | 0.93 |
+| Recall@3 | 87.5% | 100% |
+
+生成层用 RAGAS 评测，faithfulness ≈ 0.99（无幻觉）、context_recall = 1.0。
